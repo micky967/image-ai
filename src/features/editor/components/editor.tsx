@@ -31,7 +31,7 @@ export const Editor = () => {
 
   }, [activeTool]);
 
-  const { innit } = useEditor();
+  const { innit, editor } = useEditor();
 
   const canvasRef = useRef(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -62,6 +62,7 @@ export const Editor = () => {
         />
 
         <ShapeSidebar
+          editor={editor}
           activeTool={activeTool}
           onChangeActiveTool={onChangeActiveTool}
         />
